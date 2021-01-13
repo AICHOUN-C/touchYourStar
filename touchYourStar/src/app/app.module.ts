@@ -11,11 +11,13 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { TabsBarComponent } from './components/tabs-bar/tabs-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    TabsBarComponent
   ],
   imports: [
     BrowserModule,
