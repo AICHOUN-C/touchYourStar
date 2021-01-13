@@ -1,0 +1,19 @@
+#card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+#main{
+    height: 84vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formField{
+    width: 100%;
+}
+#buttonSubmit{
+    margin: 1em;
+}
