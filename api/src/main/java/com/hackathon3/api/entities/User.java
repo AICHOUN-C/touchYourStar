@@ -1,10 +1,23 @@
 package com.hackathon3.api.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.hackathon3.api.enums.RoleEnum;
 
-import javax.persistence.*;
+import java.time.Instant;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
 
 @Entity
+@Table(name= "users")
 public class User {
 
     @Id
@@ -13,7 +26,75 @@ public class User {
 
     private String username;
     private String password;
+    private Instant createdAt;
+    private Instant updatedAt;
+    private List<RoleEnum> roleList;
+    
+    @OneToOne(mappedBy = "customers")
+    @JoinColumn(name = "customer_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    Customer customer;
+    
+	public User() {
+		
+	}
 
-    @OneToMany(mappedBy = "role")
-    private RoleEnum role;
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Instant getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Instant createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Instant getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Instant updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public List<RoleEnum> getRoleList() {
+		return roleList;
+	}
+
+	public void setRoleList(List<RoleEnum> roleList) {
+		this.roleList = roleList;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	
 }
+
