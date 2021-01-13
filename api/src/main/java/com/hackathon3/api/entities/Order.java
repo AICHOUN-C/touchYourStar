@@ -1,5 +1,6 @@
 package com.hackathon3.api.entities;
 
+import com.hackathon3.api.enums.OrderStatus;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -29,13 +30,16 @@ public class Order {
     @NotNull
     private Customer customer;
 
+    @OneToMany(mappedBy = "address")
+    @NotNull
+    private Address deliveryAddress;
 
-    public enum OrderStatus {
-        PENDING,
-        ONGOING,
-        DELIVERED,
-        CANCELLED;
-    }
+    @OneToMany(mappedBy = "address")
+    @JoinColumn(name = "billingAddress")
+    private Address billingAddress;
+
+    public Order() { }
+
 
     public boolean isDeliverable() {
         if(getStatus() == OrderStatus.PENDING) {
@@ -81,6 +85,12 @@ public class Order {
     public Customer getCustomer() {
         return customer;
     }
+    public Address getDeliveryAddress() {
+        return deliveryAddress;
+    }
+    public Address getBillingAddress() {
+        return billingAddress;
+    }
 
     //Setters
     public void setStatus(OrderStatus status) {
@@ -97,5 +107,11 @@ public class Order {
     }
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+    public void setDeliveryAddress(Address deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
+    }
+    public void setBillingAddress(Address billingAddress) {
+        this.billingAddress = billingAddress;
     }
 }
