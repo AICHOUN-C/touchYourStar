@@ -1,5 +1,6 @@
 package com.hackathon3.api.controllers;
 
+import com.hackathon3.api.dto.UpdateOrderDto;
 import com.hackathon3.api.entities.Order;
 import com.hackathon3.api.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
-@RequestMapping("/comments")
+@RequestMapping("/orders")
 public class OrderController {
 
     @Autowired
@@ -23,5 +24,18 @@ public class OrderController {
     @GetMapping("/{id}")
     public Order findOrderById(@PathVariable Long id) {
         return orderService.findOrderById(id);
+    }
+
+    @PostMapping
+    public Order create(@RequestBody )
+
+    @PutMapping("/{id}")
+    public Order updateOrder(@PathVariable Long id, @RequestBody UpdateOrderDto dto) {
+        return orderService.update(id, dto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteOrder(@PathVariable Long id) {
+        orderService.delete(id);
     }
 }

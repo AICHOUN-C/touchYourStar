@@ -18,8 +18,12 @@ public class Order {
     @NotNull
     private Date date;
 
-    @Column
-    @NotNull
+    @ManyToMany
+    @JoinTable(
+        name = "Order_Product_Associations",
+        joinColumns = @JoinColumn( name = "order_id"),
+        inverseJoinColumns = @JoinColumn( name = "product_id")
+    )
     private List<Product> productList;
 
     @Column
