@@ -1,9 +1,14 @@
-#main{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+#toolbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 300;
 }
 #body{
-    height: 100vh;
+    margin-top: 5em;
+}
+#tabbar{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
