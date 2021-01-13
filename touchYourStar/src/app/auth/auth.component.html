@@ -1,7 +1,7 @@
 <div id="main">
 
 
-<mat-card id="card">
+<mat-card id="card" class="mat-elevation-z8">
     <mat-card-title>Mon Compte</mat-card-title>
     <mat-card-content>
         <form (ngSubmit)="auth()">
@@ -16,7 +16,7 @@
         </form>
     </mat-card-content>
     <mat-card-footer>
-        <button mat-raised-button color="primary" id="buttonSubmit" type="submit">Se Connecter</button>
+        <button mat-raised-button color="primary" id="buttonSubmit" type="submit" routerLink="account">Se Connecter</button>
     </mat-card-footer>
 </mat-card>
 </div>
