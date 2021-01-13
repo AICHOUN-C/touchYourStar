@@ -8,10 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ItemsProductsComponent implements OnInit {
 
   @Input()
-  idProduct: number
+  idProduct = 0
   @Input()
-  nameProduct: string
-
+  nameProduct= "0"
+  @Input()
+  descriptionProduct= "0"
+  @Input()
+  imgProduct= "0"
+  @Input()
+  priceProduct=0
   constructor() { }
 
   ngOnInit(): void {

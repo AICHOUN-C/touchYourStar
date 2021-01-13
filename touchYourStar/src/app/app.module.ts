@@ -12,7 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TabsBarComponent } from './components/tabs-bar/tabs-bar.component';
-import {MatCardModule} from '@angular/material/card';
+
 
 
 @NgModule({
@@ -28,7 +28,6 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,13 +5,15 @@ import { ShopRoutingModule } from './shop-routing.module';
 import { ShopComponent } from './shop.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { ItemsProductsComponent } from './components/items-products/items-products.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
   declarations: [ShopComponent, ListProductsComponent, ItemsProductsComponent],
   imports: [
     CommonModule,
-    ShopRoutingModule
+    ShopRoutingModule,
+    MatCardModule
   ]
 })
 export class ShopModule { }
