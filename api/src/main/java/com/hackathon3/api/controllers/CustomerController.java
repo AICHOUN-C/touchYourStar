@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hackathon3.api.dto.UpdateOrderDto;
+import com.hackathon3.api.dto.CustomerDto;
 import com.hackathon3.api.entities.Customer;
-import com.hackathon3.api.entities.Order;
 import com.hackathon3.api.services.CustomerService;
 
 @CrossOrigin(origins ="*", maxAge=3600)
