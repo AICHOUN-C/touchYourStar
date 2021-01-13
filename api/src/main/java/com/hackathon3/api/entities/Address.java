@@ -19,7 +19,7 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-	@Column(name="recipient", nullable = false)
+	@Column(name="recipient", nullable = true)
     private String recipient;
 	
 	@Column(name="number", nullable = false)
@@ -53,6 +53,10 @@ public class Address {
     
     //Billing attribute
     private int order_id;
+    
+    public Address() {
+    	
+    }
 
 	public Long getId() {
 		return id;
