@@ -2,6 +2,7 @@ package com.hackathon3.api.entities;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,7 +40,8 @@ public class Address {
     @Column(name="state", nullable = false)
     private String state;
     
-    @OneToMany(mappedBy = "address")
+    @Column(name="deliveryAddress")
+    @OneToMany(mappedBy = "address", cascade = CascadeType.REFRESH)
     private List<Order> orders;
     
     
