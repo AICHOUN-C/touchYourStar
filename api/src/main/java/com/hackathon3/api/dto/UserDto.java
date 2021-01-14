@@ -1,23 +1,32 @@
-/*package com.hackathon3.api.dto;
+package com.hackathon3.api.dto;
+
+import com.hackathon3.api.entities.Customer;
 
 public class UserDto {
 
-	
-    private String username;
+    private String login;
     private String password;
-    
-    
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	} 
-    
-}*/
+    private Customer customer;
+
+    //Getters
+    public String getLogin() {
+        return login;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    //Setters
+    public void setLogin(String login) {
+        this.login = login;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+}

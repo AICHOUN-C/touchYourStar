@@ -2,13 +2,7 @@ package com.hackathon3.api.entities;
 
 import java.time.Instant;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-
+import javax.persistence.*;
 
 @Entity
 @Table(name= "users")
@@ -18,54 +12,42 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private String login;
     private String password;
-    private Instant createdAt;
-    private Instant updatedAt;
+
+    @OneToOne(mappedBy = "user")
+	private Customer customer;
     
-	public User() {
-		
+	public User() { }
+
+	public User(String login, String password) {
+		super();
+		this.setLogin(login);
+		this.setPassword(password);
 	}
 
+	//Getters
 	public Long getId() {
 		return id;
 	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public String getLogin() {
+		return login;
 	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
 	public String getPassword() {
 		return password;
 	}
+	public Customer getCustomer() {return customer; }
 
+	//Setters
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public Instant getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Instant createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Instant getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Instant updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-	
+	public void setCustomer(Customer customer) { this.customer = customer; }
 }
 

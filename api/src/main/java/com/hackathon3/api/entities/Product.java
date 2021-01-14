@@ -3,90 +3,75 @@ package com.hackathon3.api.entities;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "products")
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
-	
-	@Column(name = "category", nullable = false)
-	private String category;
-	
-	@Column(name = "price", nullable = false)
-	private int price;
-	
-	@Column(name = "quantity", nullable = false)
-	private int quantity;
-	
-	@Column(name = "name", nullable = false)
-	private String name;
-	
-	@Column(name = "description", nullable = false)
-	private String description;
-	
-	@Column(name = "reference", nullable = false)
+  
 	private String reference;
-	
-	@Column(name = "image", nullable = false)
+	private String brand;
+	private String description;
+	private String category;
 	private String image;
-	
-	public Product() { }
-	
-	public Long getId() {
-		return this.id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	@Column(name = "unitary_price")
+	private double price;
+	private int quantityInStock;
 
-	public String getCategory() {
-		return this.category;
+	public Product() { }
+
+	//Getters
+	public Long getId() {
+		return id;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+	public String getReference() {
+		return reference;
 	}
-	
-	public int getPrice() {
-		return price;
+	public String getBrand() {
+		return brand;
 	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
 	public String getDescription() {
 		return description;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public String getCategory() {
+		return category;
 	}
-	
-	public String getReference() {
-		return reference;
+	public String getImage() {
+		return image;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public int getQuantityInStock() {
+		return quantityInStock;
+	}
+
+	//Setters
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public void setReference(String reference) {
 		this.reference = reference;
 	}
-	
-	public String getImage() {
-		return image;
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public void setImage(String image) {
 		this.image = image;
 	}
-
+	public void setPrice(double price) {
+		if(price < 0) throw	new RuntimeException("Le prix doit être positif");
+		this.price = price;
+	}
+	public void setQuantityInStock(int quantityInStock) {
+		this.quantityInStock = quantityInStock;
+	}
 }
