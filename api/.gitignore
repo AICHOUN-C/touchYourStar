@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+api/.DS_Store
+api/src/.DS_Store
+api/src/main/.DS_Store
+api/src/main/java/.DS_Store
+api/src/main/java/com/.DS_Store
+api/src/main/java/com/hackathon3/.DS_Store

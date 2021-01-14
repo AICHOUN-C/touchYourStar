@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'list', component: ShopComponent },
   { path: 'list/:detailId', component: DetailProductsComponent },
   { path: 'order', component: OrderShopComponent },
-  { path: '', redirectTo: 'list', pathMatch: 'full' }
+  { path: '', redirectTo: 'list', pathMatch: 'full' },
 ];
 
 @NgModule({
