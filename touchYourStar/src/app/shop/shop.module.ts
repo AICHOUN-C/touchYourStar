@@ -8,13 +8,12 @@ import { ItemsProductsComponent } from './components/items-products/items-produc
 import {MatCardModule} from '@angular/material/card';
 import { DetailProductsComponent } from './components/detail-products/detail-products.component';
 
-
 @NgModule({
   declarations: [ShopComponent, ListProductsComponent, ItemsProductsComponent, DetailProductsComponent],
   imports: [
     CommonModule,
     ShopRoutingModule,
-    MatCardModule
+    MatCardModule,
   ]
 })
 export class ShopModule { }
