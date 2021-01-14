@@ -1,1 +1,22 @@
-<p>auth works!</p>
+<div id="main">
+
+
+<mat-card id="card" class="mat-elevation-z8">
+    <mat-card-title>Mon Compte</mat-card-title>
+    <mat-card-content>
+        <form (ngSubmit)="auth()">
+            <mat-form-field appearance="fill" class="formField">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" >
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="formField">
+                <mat-label>Password</mat-label>
+                <input matInput type="password">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-footer>
+        <button mat-raised-button color="primary" id="buttonSubmit" type="submit" routerLink="account">Se Connecter</button>
+    </mat-card-footer>
+</mat-card>
+</div>
