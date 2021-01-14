@@ -4,9 +4,9 @@ import { DetailProductsComponent } from './components/detail-products/detail-pro
 import { ShopComponent } from './shop.component';
 
 const routes: Routes = [
-  { path: '', component: ShopComponent },
-  { path: 'detail/:id', component: DetailProductsComponent },
-  { path: '', redirectTo: '', pathMatch: 'full' }
+  { path: 'list', component: ShopComponent },
+  { path: 'list/:detailId', component: DetailProductsComponent },
+  { path: '', redirectTo: 'list', pathMatch: 'full' }
 ];
 
 @NgModule({

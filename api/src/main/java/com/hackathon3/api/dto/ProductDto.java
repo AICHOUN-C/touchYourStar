@@ -2,7 +2,7 @@ package com.hackathon3.api.dto;
 
 
 public class ProductDto {
-
+  
 	private String reference;
 	private String brand;
 	private String description;
