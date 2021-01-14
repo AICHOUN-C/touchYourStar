@@ -6,7 +6,7 @@ import { AuthComponent } from './auth.component';
 const routes: Routes = [
   { path: '', component: AuthComponent },
   { path: 'account', component: AccountAuthComponent },
-  { path: '', redirectTo: '', pathMatch: 'full' }
+  { path: '', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
