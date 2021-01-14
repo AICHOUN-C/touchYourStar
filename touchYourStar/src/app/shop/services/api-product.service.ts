@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 export class ApiProductService {
 
   // apiUrl = 'http://localhost:8080/products'
+
+  //Serveur Perso
   apiUrl = 'http://82.64.113.224:8080/products'
 
   constructor(private http: HttpClient) { }
