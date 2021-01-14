@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TabsBarComponent } from './components/tabs-bar/tabs-bar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ToolbarComponent,
     TabsBarComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [

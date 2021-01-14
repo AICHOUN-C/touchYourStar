@@ -8,6 +8,7 @@ import { ItemsProductsComponent } from './components/items-products/items-produc
 import { MatCardModule } from '@angular/material/card';
 import { DetailProductsComponent } from './components/detail-products/detail-products.component';
 import { OrderShopComponent } from './components/order-shop/order-shop.component';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { OrderShopComponent } from './components/order-shop/order-shop.component
     ListProductsComponent, 
     ItemsProductsComponent, 
     DetailProductsComponent, 
-    OrderShopComponent],
+    OrderShopComponent,
+    PageNotFoundComponent
+  ],
   imports: [
     CommonModule,
     ShopRoutingModule,

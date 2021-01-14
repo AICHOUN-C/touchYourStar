@@ -11,10 +11,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { AccountAuthComponent } from './account-auth/account-auth.component';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 
 @NgModule({
-  declarations: [AuthComponent, AccountAuthComponent],
+  declarations: [AuthComponent, AccountAuthComponent, PageNotFoundComponent],
   imports: [
     CommonModule,
     FormsModule,
