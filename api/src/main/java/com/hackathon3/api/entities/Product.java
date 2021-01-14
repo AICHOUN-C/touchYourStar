@@ -14,7 +14,7 @@ public class Product {
 	private String category;
 	
 	@Column(name = "price", nullable = false)
-	private String price;
+	private int price;
 	
 	@Column(name = "quantity", nullable = false)
 	private int quantity;
@@ -47,10 +47,10 @@ public class Product {
 		this.category = category;
 	}
 	
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	

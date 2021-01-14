@@ -4,23 +4,22 @@ package com.hackathon3.api.dto;
 public class ProductDto {
 	
 	private String category;
-	private String price;
+	private int price;
 	private int quantity;
 	private String name;
 	private String description;
 	private String reference;
-	
-	
+		
 	public String getCategory() {
 		return category;
 	}
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	public int getQuantity() {
