@@ -1,7 +1,6 @@
 package com.hackathon3.api.dto;
 
 import com.hackathon3.api.entities.Address;
-import com.hackathon3.api.entities.Customer;
 import com.hackathon3.api.entities.OrderProduct;
 import com.hackathon3.api.entities.Product;
 import com.hackathon3.api.enums.OrderStatus;
