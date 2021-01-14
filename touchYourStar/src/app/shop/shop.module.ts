@@ -8,7 +8,7 @@ import { ItemsProductsComponent } from './components/items-products/items-produc
 import { MatCardModule } from '@angular/material/card';
 import { DetailProductsComponent } from './components/detail-products/detail-products.component';
 import { OrderShopComponent } from './components/order-shop/order-shop.component';
-import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -17,12 +17,12 @@ import { PageNotFoundComponent } from '../page-not-found/page-not-found.componen
     ItemsProductsComponent, 
     DetailProductsComponent, 
     OrderShopComponent,
-    PageNotFoundComponent
   ],
   imports: [
     CommonModule,
     ShopRoutingModule,
     MatCardModule,
+    MatListModule
   ]
 })
 export class ShopModule { }

@@ -1,1 +1,4 @@
 <p>order-shop works!</p>
+<mat-list role="list" *ngFor="let item of orders">
+    <mat-list-item role="listitem">{{item.id}} {{item.brand}}</mat-list-item>
+</mat-list>

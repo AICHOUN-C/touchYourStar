@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderShopComponent implements OnInit {
 
+  orders=[{"id":1, "brand":"TEST"},{"id":2, "brand":"TEST"}]
+
   constructor() { }
 
   ngOnInit(): void {

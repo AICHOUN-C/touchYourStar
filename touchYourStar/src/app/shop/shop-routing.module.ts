@@ -11,8 +11,6 @@ const routes: Routes = [
   { path: 'list/:detailId', component: DetailProductsComponent },
   { path: 'order', component: OrderShopComponent },
   { path: '', redirectTo: 'list', pathMatch: 'full' },
-  {path: '404', component:PageNotFoundComponent},
-  { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
 
 @NgModule({
