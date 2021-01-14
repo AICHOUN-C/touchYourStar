@@ -8,21 +8,28 @@ import { ItemsProductsComponent } from './components/items-products/items-produc
 import { MatCardModule } from '@angular/material/card';
 import { DetailProductsComponent } from './components/detail-products/detail-products.component';
 import { OrderShopComponent } from './components/order-shop/order-shop.component';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
-    ShopComponent, 
-    ListProductsComponent, 
-    ItemsProductsComponent, 
-    DetailProductsComponent, 
+    ShopComponent,
+    ListProductsComponent,
+    ItemsProductsComponent,
+    DetailProductsComponent,
     OrderShopComponent,
   ],
   imports: [
     CommonModule,
     ShopRoutingModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
   ]
 })
 export class ShopModule { }
