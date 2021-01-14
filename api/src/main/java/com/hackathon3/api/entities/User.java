@@ -1,7 +1,5 @@
 package com.hackathon3.api.entities;
 
-import java.time.Instant;
-
 import javax.persistence.*;
 
 @Entity

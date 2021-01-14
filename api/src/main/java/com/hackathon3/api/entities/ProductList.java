@@ -1,8 +1,7 @@
 package com.hackathon3.api.entities;
 
 import javax.persistence.*;
-import java.time.Instant;
-import java.util.List;
+
 
 @Entity
 @Table(name = "product_list")

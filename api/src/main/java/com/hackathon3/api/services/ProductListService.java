@@ -1,7 +1,6 @@
 package com.hackathon3.api.services;
 
 import com.hackathon3.api.dto.ProductListDto;
-import com.hackathon3.api.entities.Product;
 import com.hackathon3.api.entities.ProductList;
 import com.hackathon3.api.mappers.ProductListMapper;
 import com.hackathon3.api.repositories.ProductListRepository;
