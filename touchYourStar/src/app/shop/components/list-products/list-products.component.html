@@ -2,7 +2,7 @@
     <div *ngFor="let product of products">
         <app-items-products [idProduct]="product.id" [nameProduct]="product.name"
             [descriptionProduct]="product.description" [imgProduct]="product.image" [priceProduct]="product.price"
-            class="cardProduct">
+            class="cardProduct" [routerLink]="['../list', product.id]">
         </app-items-products>
     </div>
 </div>
