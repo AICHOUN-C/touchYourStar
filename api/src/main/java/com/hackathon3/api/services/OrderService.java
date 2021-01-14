@@ -1,4 +1,4 @@
-package com.hackathon3.api.services;
+/*package com.hackathon3.api.services;
 
 import com.hackathon3.api.dto.CreateOrderDto;
 import com.hackathon3.api.dto.UpdateOrderDto;
@@ -42,4 +42,4 @@ public class OrderService {
         Optional<Order> orderOptional = orderRepository.findById(id);
         orderOptional.ifPresent(order -> orderRepository.delete(order));
     }
-}
+}*/

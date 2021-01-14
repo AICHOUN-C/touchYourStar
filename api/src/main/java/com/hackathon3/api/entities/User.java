@@ -1,17 +1,11 @@
 package com.hackathon3.api.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.hackathon3.api.enums.RoleEnum;
-
 import java.time.Instant;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -28,12 +22,6 @@ public class User {
     private String password;
     private Instant createdAt;
     private Instant updatedAt;
-    private List<RoleEnum> roleList;
-    
-    @OneToOne(mappedBy = "customers")
-    @JoinColumn(name = "customer_id")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    Customer customer;
     
 	public User() {
 		
@@ -78,23 +66,6 @@ public class User {
 	public void setUpdatedAt(Instant updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
-	public List<RoleEnum> getRoleList() {
-		return roleList;
-	}
-
-	public void setRoleList(List<RoleEnum> roleList) {
-		this.roleList = roleList;
-	}
-
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-
 	
 }
 

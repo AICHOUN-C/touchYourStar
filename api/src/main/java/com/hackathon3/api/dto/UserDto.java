@@ -1,4 +1,4 @@
-package com.hackathon3.api.dto;
+/*package com.hackathon3.api.dto;
 
 public class UserDto {
 
@@ -20,4 +20,4 @@ public class UserDto {
 		this.password = password;
 	} 
     
-}
+}*/

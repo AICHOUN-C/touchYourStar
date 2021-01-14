@@ -1,4 +1,4 @@
-package com.hackathon3.api.services;
+/*package com.hackathon3.api.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -54,4 +54,4 @@ public class UserService {
         Optional<User> userOptional = userRepository.findById(id);
         userOptional.ifPresent(customer -> userRepository.delete(customer));
     }
-}
+}*/
