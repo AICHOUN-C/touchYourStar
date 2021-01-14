@@ -1,4 +1,4 @@
-package com.hackathon3.api.entities;
+/*package com.hackathon3.api.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -81,4 +81,4 @@ public class OrderProduct implements java.io.Serializable {
     public int hashCode() {
         return (getPk() != null ? getPk().hashCode() : 0);
     }
-}
+}*/

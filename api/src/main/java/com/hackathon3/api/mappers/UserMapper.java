@@ -1,4 +1,4 @@
-package com.hackathon3.api.mappers;
+/*package com.hackathon3.api.mappers;
 
 import org.springframework.stereotype.Component;
 
@@ -25,7 +25,6 @@ public class UserMapper {
 		user.setPassword(dto.getPassword());
 		user.setCreatedAt(dto.getCreatedAt());
 		user.setUpdatedAt(dto.getUpdatedAt());
-		user.setRoleList(dto.getRoleList());
 		return user;
 	}
 	
@@ -41,4 +40,4 @@ public class UserMapper {
 		user.setPassword(dto.getPassword());
 		return user;
 	}
-}
+}*/

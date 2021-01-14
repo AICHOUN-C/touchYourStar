@@ -1,4 +1,4 @@
-package com.hackathon3.api.entities;
+/*package com.hackathon3.api.entities;
 
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
@@ -51,5 +51,5 @@ public class OrderProductId implements java.io.Serializable {
         result = 31 * result + (product != null ? product.hashCode() : 0);
         return result;
     }
-}
+}*/
 

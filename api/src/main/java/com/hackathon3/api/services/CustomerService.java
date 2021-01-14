@@ -1,4 +1,4 @@
-package com.hackathon3.api.services;
+/*package com.hackathon3.api.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -45,4 +45,4 @@ public class CustomerService {
         Optional<Customer> customerOptional = customerRepository.findById(id);
         customerOptional.ifPresent(customer -> customerRepository.delete(customer));
     }
-}
+}*/

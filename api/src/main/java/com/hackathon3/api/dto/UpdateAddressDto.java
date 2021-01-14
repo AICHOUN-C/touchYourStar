@@ -1,4 +1,4 @@
-package com.hackathon3.api.dto;
+/*package com.hackathon3.api.dto;
 
 public class UpdateAddressDto {
 
@@ -67,4 +67,4 @@ public class UpdateAddressDto {
 		this.infoAdded = infoAdded;
 	}
     
-}
+}*/

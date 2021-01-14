@@ -1,4 +1,4 @@
-package com.hackathon3.api.dto;
+/*package com.hackathon3.api.dto;
 
 import java.time.Instant;
 import java.util.List;
@@ -46,4 +46,4 @@ public class UserAdminDto {
 		this.roleList = roleList;
 	}
     
-}
+}*/
