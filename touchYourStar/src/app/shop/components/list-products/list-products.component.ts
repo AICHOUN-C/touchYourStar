@@ -15,13 +15,12 @@ export class ListProductsComponent implements OnInit {
   //   {"idProduct":4,"nameProduct":"Voiture sans roues", "descriptionProduct":"La voiture qui ne vous coutera pas 1€ d'essence", "imgProduct":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-9d7om98yrJRDCm-ukmSO21a8DcnoTN80Jw&usqp=CAU", "priceProduct":1}
   // ]
 
-  products: any =[]
+  products:any =[]
 
   constructor(private apiProduct: ApiProductService) { }
 
   ngOnInit(): void {
     this.apiProduct.getAllProducts().subscribe((data)=> this.products = data)
-    console.log(this.products)
   }
 
 }

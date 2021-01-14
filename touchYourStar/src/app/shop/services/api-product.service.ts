@@ -13,5 +13,8 @@ export class ApiProductService {
   getAllProducts(){
     return this.http.get(this.apiUrl+'/products')
   }
+  getProducts(productId: any){
+    return this.http.get(this.apiUrl+'/products'+productId);
+  }
 
 }

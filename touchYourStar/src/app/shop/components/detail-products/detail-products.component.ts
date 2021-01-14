@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-detail-products',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailProductsComponent implements OnInit {
 
-  constructor() { }
+  post: any;
+  constructor(private route: ActivatedRoute) {
+   }
 
   ngOnInit(): void {
+    const postId = this.route.snapshot.paramMap.get('detailId');
+    console.log(postId)
   }
-
 }
