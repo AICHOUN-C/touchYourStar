@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hackathon3.api.dto.UpdateOrderDto;
+import com.hackathon3.api.dto.CustomerDto;
 import com.hackathon3.api.entities.Customer;
-import com.hackathon3.api.entities.Order;
 import com.hackathon3.api.services.CustomerService;
 
 @CrossOrigin(origins ="*", maxAge=3600)
@@ -27,8 +26,14 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 	
+	
+    @PostMapping
+    public Customer create(@RequestBody CustomerDto dto) {
+        return customerService.createCustomer(dto);
+    }
+	
     @GetMapping
-    public List<Customer> findAllcustomer() {
+    public List<Customer> findAllCustomer() {
         return customerService.findAllCustomer();
     }
 
@@ -43,4 +48,8 @@ public class CustomerController {
         return customerService.update(id, dto);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteCustomer(@PathVariable Long id) {
+    	customerService.delete(id);
+    }
 }
