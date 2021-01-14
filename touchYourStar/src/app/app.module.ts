@@ -20,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     ToolbarComponent,
-    TabsBarComponent
+    TabsBarComponent,
+    
   ],
   imports: [
     BrowserModule,
