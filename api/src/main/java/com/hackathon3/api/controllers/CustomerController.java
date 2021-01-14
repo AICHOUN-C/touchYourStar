@@ -26,8 +26,14 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 	
+	
+    @PostMapping
+    public Customer create(@RequestBody CustomerDto dto) {
+        return customerService.createCustomer(dto);
+    }
+	
     @GetMapping
-    public List<Customer> findAllcustomer() {
+    public List<Customer> findAllCustomer() {
         return customerService.findAllCustomer();
     }
 
@@ -42,4 +48,8 @@ public class CustomerController {
         return customerService.update(id, dto);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteCustomer(@PathVariable Long id) {
+    	customerService.delete(id);
+    }
 }
