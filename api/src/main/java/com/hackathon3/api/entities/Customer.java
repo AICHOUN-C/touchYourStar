@@ -1,127 +1,105 @@
 package com.hackathon3.api.entities;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity
-@Table(name = "customer")
 public class Customer {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long id;
 	private String firstname;
 	private String lastname;
 	private String email;
-	private String phone;
+	private int phoneNumber;
 	private Date birthdate;
-	
-    @OneToOne(mappedBy = "users")
-    @JoinColumn(name = "users_id")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    User user;
-    
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    Address address;
-    
-	
-	public Customer() {
-		
-	}
+	private User user;
+	private Address address;
+	private Set<OrderProduct> orderProducts = new HashSet<OrderProduct>(0);
 
+	public Customer() { }
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
 	public Long getId() {
-		return id;
+		return this.id;
 	}
-
-
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
+	@Column(name = "firstname", nullable = false)
 	public String getFirstname() {
 		return firstname;
 	}
-
-
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
 
-
+	@Column(name = "lastname", nullable = false)
 	public String getLastname() {
 		return lastname;
 	}
-
-
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
 
-
+	@Column(name = "email", nullable = false)
 	public String getEmail() {
 		return email;
 	}
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
-	public String getPhone() {
-		return phone;
+	@Column(name = "phone_number", nullable = true)
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-
-	public Date getBirthdate() {
+	@Column(name = "birthdate", nullable = true)
+	public Date getBirthDate() {
 		return birthdate;
 	}
-
-
-	public void setBirthdate(Date birthdate) {
+	public void setBirthDate() {
 		this.birthdate = birthdate;
 	}
 
-
-	public User getUser() {
+    @OneToOne(mappedBy = "user")
+    @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    public User getUser() {
 		return user;
 	}
-
-
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-
-	public Address getAddress() {
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    public Address getAddress() {
 		return address;
 	}
-
-
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	
-	
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.customer", cascade = CascadeType.ALL)
+	public Set<OrderProduct> getCustomerOrders() {
+		return this.orderProducts;
+	}
+	public void setCustomerOrders(Set<OrderProduct> orderProducts) {
+		this.orderProducts = orderProducts;
+	}
 }

@@ -15,7 +15,7 @@ public class OrderMapper {
         order.setBillingAddress(dto.getBillingAddress());
         order.setDeliveryAddress(dto.getDeliveryAddress());
         order.setStatus(dto.getStatus());
-        order.setProductList(dto.getProductList());
+        order.setOrderProducts(dto.getOrderProducts());
         return order;
     }
 
@@ -24,7 +24,7 @@ public class OrderMapper {
         order.setDeliveryAddress(dto.getDeliveryAddress());
         order.setBillingAddress(dto.getBillingAddress());
         order.setStatus(dto.getStatus());
-        order.setProductList(dto.getProductList());
+        order.setOrderProducts(dto.getOrderProducts());
         return order;
     }
 }
