@@ -6,15 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class ApiProductService {
 
-  apiUrl = 'http://localhost:8080'
+  apiUrl = 'http://localhost:8080/products'
 
   constructor(private http: HttpClient) { }
 
   getAllProducts(){
-    return this.http.get(this.apiUrl+'/products')
+    return this.http.get(this.apiUrl)
   }
   getProducts(productId: any){
-    return this.http.get(this.apiUrl+'/products'+productId);
+    return this.http.get(this.apiUrl+'/'+productId);
   }
 
 }

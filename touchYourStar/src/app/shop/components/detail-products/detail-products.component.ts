@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ApiProductService } from '../../services/api-product.service';
 
 @Component({
   selector: 'app-detail-products',
@@ -8,12 +9,12 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class DetailProductsComponent implements OnInit {
 
-  post: any;
-  constructor(private route: ActivatedRoute) {
-   }
-
+  product: any;
+  constructor(private route: ActivatedRoute, private apiProduct: ApiProductService) {
+  }
   ngOnInit(): void {
-    const postId = this.route.snapshot.paramMap.get('detailId');
-    console.log(postId)
+    const productId = this.route.snapshot.paramMap.get('detailId');
+    console.log(productId)
+    this.apiProduct.getProducts(productId).subscribe((data) => this.product = data)
   }
 }

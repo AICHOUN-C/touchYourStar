@@ -1,0 +1,14 @@
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 15vh;
+    color: #fff3e0;
+    font-size: 2em;
+    border-radius: 0 0 100% 20%;
+}
+.icon {
+    margin-right: 1rem;
+    font-size: 1em;
+}

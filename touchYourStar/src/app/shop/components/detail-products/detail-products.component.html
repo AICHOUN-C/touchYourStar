@@ -1,1 +1,17 @@
-<p>detail-products works!</p>
+<mat-card class="card">
+    <img mat-card-lg-image src={{product.image}}>
+    <div class="header">
+        <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
+        <mat-card-title>{{product.name}}</mat-card-title>
+        <mat-card-subtitle>{{product.reference}}</mat-card-subtitle>
+        <mat-card-content>
+            <p>Description :</p>{{product.description}}
+        </mat-card-content>
+
+        <mat-card-title>
+            <mat-card-title>Prix :</mat-card-title>
+            {{product.price}} €
+        </mat-card-title>
+    </div>
+
+</mat-card>
