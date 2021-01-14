@@ -2,11 +2,13 @@ package com.hackathon3.api.dto;
 
 import com.hackathon3.api.entities.Address;
 import com.hackathon3.api.entities.Customer;
+import com.hackathon3.api.entities.OrderProduct;
 import com.hackathon3.api.entities.Product;
 import com.hackathon3.api.enums.OrderStatus;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 public class CreateOrderDto {
     Date date;
@@ -15,6 +17,7 @@ public class CreateOrderDto {
     Customer customer;
     Address deliveryAddress;
     Address billingAddress;
+    Set<OrderProduct> orderProducts;
 
     //Getters
     public Date getDate() {
@@ -35,6 +38,7 @@ public class CreateOrderDto {
     public Address getBillingAddress() {
         return billingAddress;
     }
+    public Set<OrderProduct> getOrderProducts() { return orderProducts; }
 
     //Setters
     public void setDate(Date date) {
@@ -54,5 +58,8 @@ public class CreateOrderDto {
     }
     public void setBillingAddress(Address billingAddress) {
         this.billingAddress = billingAddress;
+    }
+    public void setOrderProducts(Set<OrderProduct> orderProducts) {
+        this.orderProducts = orderProducts;
     }
 }

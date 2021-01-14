@@ -1,5 +1,6 @@
 package com.hackathon3.api.controllers;
 
+import com.hackathon3.api.dto.CreateOrderDto;
 import com.hackathon3.api.dto.UpdateOrderDto;
 import com.hackathon3.api.entities.Order;
 import com.hackathon3.api.services.OrderService;
@@ -27,7 +28,9 @@ public class OrderController {
     }
 
     @PostMapping
-    public Order create(@RequestBody )
+    public Order create(@RequestBody CreateOrderDto dto) {
+        return orderService.create(dto);
+    }
 
     @PutMapping("/{id}")
     public Order updateOrder(@PathVariable Long id, @RequestBody UpdateOrderDto dto) {
