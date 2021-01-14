@@ -1,4 +1,4 @@
-package com.hackathon3.api.controllers;
+/*package com.hackathon3.api.controllers;
 
 import java.util.List;
 
@@ -52,4 +52,4 @@ public class CustomerController {
     public void deleteCustomer(@PathVariable Long id) {
     	customerService.delete(id);
     }
-}
+}*/

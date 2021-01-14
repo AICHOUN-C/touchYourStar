@@ -1,4 +1,4 @@
-package com.hackathon3.api.dto;
+/*package com.hackathon3.api.dto;
 
 import com.hackathon3.api.entities.Address;
 import com.hackathon3.api.entities.Customer;
@@ -15,7 +15,6 @@ public class CreateOrderDto {
     Customer customer;
     Address deliveryAddress;
     Address billingAddress;
-    Set<OrderProduct> orderProducts;
 
     //Getters
     public Date getDate() {
@@ -33,7 +32,6 @@ public class CreateOrderDto {
     public Address getBillingAddress() {
         return billingAddress;
     }
-    public Set<OrderProduct> getOrderProducts() { return orderProducts; }
 
     //Setters
     public void setDate(Date date) {
@@ -51,7 +49,5 @@ public class CreateOrderDto {
     public void setBillingAddress(Address billingAddress) {
         this.billingAddress = billingAddress;
     }
-    public void setOrderProducts(Set<OrderProduct> orderProducts) {
-        this.orderProducts = orderProducts;
-    }
-}
+
+}*/

@@ -1,4 +1,4 @@
-package com.hackathon3.api.mappers;
+/*package com.hackathon3.api.mappers;
 
 import org.springframework.stereotype.Component;
 
@@ -26,4 +26,4 @@ public class CustomerMapper {
 		customer.setBirthdate(dto.getBirthdate());
 		return customer;
 	}
-}
+}*/

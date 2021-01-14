@@ -1,4 +1,4 @@
-package com.hackathon3.api.controllers;
+/*package com.hackathon3.api.controllers;
 
 import java.util.List;
 
@@ -64,4 +64,4 @@ public class UserController {
     public void deleteUser(@PathVariable Long id) {
     	userService.delete(id);
     }
-}
+}*/
