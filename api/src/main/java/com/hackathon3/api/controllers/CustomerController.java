@@ -1,4 +1,4 @@
-/*package com.hackathon3.api.controllers;
+package com.hackathon3.api.controllers;
 
 import java.util.List;
 
@@ -44,12 +44,12 @@ public class CustomerController {
 
 
     @PutMapping("/{id}")
-    public Customer updateCustomer(@PathVariable Long id, @RequestBody CustomerDto dto) {
+    public Customer update(@PathVariable Long id, @RequestBody CustomerDto dto) {
         return customerService.update(id, dto);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCustomer(@PathVariable Long id) {
+    public void delete(@PathVariable Long id) {
     	customerService.delete(id);
     }
-}*/
+}

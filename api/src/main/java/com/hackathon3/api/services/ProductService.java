@@ -15,9 +15,10 @@ import com.hackathon3.api.repositories.ProductRepository;
 public class ProductService {
 	
 	@Autowired
-	private ProductRepository productRepository;
+	ProductRepository productRepository;
+
 	@Autowired
-	private ProductMapper productMapper;
+	ProductMapper productMapper;
 	
 	public List<Product> findAllProducts() {
 		return productRepository.findAll();
@@ -26,7 +27,11 @@ public class ProductService {
 	public Product findProductById(Long id) {
 		return productRepository.findById(id).orElse(null);
 	}
-	
+
+	public Product createProduct(ProductDto dto) {
+		return productRepository.save(productMapper.create(dto));
+	}
+
 	public Product update(Long id, ProductDto dto) {
 		Product product = productRepository.findById(id).orElse(null);
 		product = productMapper.update(product, dto);

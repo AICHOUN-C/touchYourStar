@@ -7,13 +7,26 @@ import com.hackathon3.api.entities.Product;
 
 @Component
 public class ProductMapper {
-	public Product update (Product product, ProductDto dto) {
-		product.setCategory(dto.getCategory());
-		product.setPrice(dto.getPrice());
-		product.setQuantity(dto.getQuantity());
-		product.setName(dto.getName());
-		product.setDescription(dto.getDescription());
+	public Product create(ProductDto dto) {
+		Product product = new Product();
 		product.setReference(dto.getReference());
+		product.setBrand(dto.getBrand());
+		product.setDescription(dto.getDescription());
+		product.setCategory(dto.getCategory());
+		product.setImage(dto.getImage());
+		product.setPrice(dto.getPrice());
+		product.setQuantityInStock(dto.getQuantityInStock());
+		return product;
+	}
+
+	public Product update(Product product, ProductDto dto) {
+		product.setReference(dto.getReference());
+		product.setBrand(dto.getBrand());
+		product.setDescription(dto.getDescription());
+		product.setCategory(dto.getCategory());
+		product.setImage(dto.getImage());
+		product.setPrice(dto.getPrice());
+		product.setQuantityInStock(dto.getQuantityInStock());
 		return product;
 	}
 }

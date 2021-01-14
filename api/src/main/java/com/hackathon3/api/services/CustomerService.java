@@ -1,4 +1,4 @@
-/*package com.hackathon3.api.services;
+package com.hackathon3.api.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,7 +24,7 @@ public class CustomerService {
 	CustomerMapper customerMapper;
 	
     public Customer createCustomer(CustomerDto dto){
-        return customerRepository.save(customerMapper.createCustomer(dto));
+        return customerRepository.save(customerMapper.create(dto));
     }
 	
 	public List<Customer> findAllCustomer(){
@@ -37,7 +37,7 @@ public class CustomerService {
 	
 	public Customer update (Long id, CustomerDto dto) {
 		Customer customer = customerRepository.findById(id).orElse(null);
-		customer = customerMapper.updateCustomer(customer, dto);
+		customer = customerMapper.update(customer, dto);
 		return customerRepository.save(customer);
 	}
 	
@@ -45,4 +45,4 @@ public class CustomerService {
         Optional<Customer> customerOptional = customerRepository.findById(id);
         customerOptional.ifPresent(customer -> customerRepository.delete(customer));
     }
-}*/
+}

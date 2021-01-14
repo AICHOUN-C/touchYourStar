@@ -1,7 +1,6 @@
-/*package com.hackathon3.api.services;
+package com.hackathon3.api.services;
 
-import com.hackathon3.api.dto.CreateOrderDto;
-import com.hackathon3.api.dto.UpdateOrderDto;
+import com.hackathon3.api.dto.OrderDto;
 import com.hackathon3.api.entities.Order;
 import com.hackathon3.api.mappers.OrderMapper;
 import com.hackathon3.api.repositories.OrderRepository;
@@ -28,11 +27,11 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public Order create(CreateOrderDto dto) {
-        return orderRepository.save(orderMapper.mapDtoToEntity(dto));
+    public Order create(OrderDto dto) {
+        return orderRepository.save(orderMapper.create(dto));
     }
 
-    public Order update(Long id, UpdateOrderDto dto) {
+    public Order update(Long id, OrderDto dto) {
         Order order = orderRepository.findById(id).orElse(null);
         order = orderMapper.update(order, dto);
         return orderRepository.save(order);
@@ -42,4 +41,4 @@ public class OrderService {
         Optional<Order> orderOptional = orderRepository.findById(id);
         orderOptional.ifPresent(order -> orderRepository.delete(order));
     }
-}*/
+}

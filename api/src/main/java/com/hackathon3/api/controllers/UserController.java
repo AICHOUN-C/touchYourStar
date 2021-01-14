@@ -1,4 +1,4 @@
-/*package com.hackathon3.api.controllers;
+package com.hackathon3.api.controllers;
 
 import java.util.List;
 
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hackathon3.api.dto.UserAdminDto;
 import com.hackathon3.api.dto.UserDto;
 import com.hackathon3.api.entities.User;
 import com.hackathon3.api.services.UserService;
@@ -33,11 +32,6 @@ public class UserController {
     public User create(@RequestBody UserDto dto) {
         return userService.createUser(dto);
     }
-    
-    @PostMapping
-    public User createAdmin(@RequestBody UserAdminDto dto) {
-        return userService.createUserAdmin(dto);
-    }
 	
     @GetMapping
     public List<User> findAllUser() {
@@ -54,14 +48,9 @@ public class UserController {
     public User updateUser(@PathVariable Long id, @RequestBody UserDto dto) {
         return userService.update(id, dto);
     }
-    
-    @PutMapping("/{id}")
-    public User updateUserAdmin(@PathVariable Long id, @RequestBody UserAdminDto dto) {
-        return userService.updateAdmin(id, dto);
-    }
 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
     	userService.delete(id);
     }
-}*/
+}

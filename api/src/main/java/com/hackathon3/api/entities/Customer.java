@@ -5,74 +5,77 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "customers")
 public class Customer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
-	
-	@Column(name = "firstname", nullable = false)
+
 	private String firstname;
-	
-	@Column(name = "lastname", nullable = false)
 	private String lastname;
-	
-	@Column(name = "email", nullable = false)
 	private String email;
-	
-	@Column(name = "phone_number", nullable = true)
 	private int phoneNumber;
-	
-	@Column(name = "birthdate", nullable = true)
 	private Date birthdate;
+
+	@OneToOne
+	@JoinColumn(name = "user_id")
+	private User user;
 	
 	public Customer() { }
 
+	public Customer(String firstname, String lastname, String email, int phoneNumber, Date birthdate) {
+		this.setFirstname(firstname);
+		this.setLastname(lastname);
+		this.setEmail(email);
+		this.setPhoneNumber(phoneNumber);
+		this.setBirthdate(birthdate);
+	}
+
+	//Getters
 	public Long getId() {
-		return this.id;
+		return id;
 	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
 	public String getFirstname() {
 		return firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+	public Date getBirthdate() {
+		return birthdate;
+	}
+	public User getUser() {
+		return user;
+	}
+
+	//Setters
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
-
-
-	public String getLastname() {
-		return lastname;
-	}
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
-	}
-
-
-	public String getEmail() {
-		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
-	public int getPhoneNumber() {
-		return phoneNumber;
-	}
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
-	}
-	
-	public Date getBirthdate() {
-		return birthdate;
 	}
 	public void setBirthdate(Date birthdate) {
 		this.birthdate = birthdate;
 	}
-
+	public void setUser(User user) {
+		this.user = user;
+	}
 }
