@@ -12,7 +12,6 @@ import java.util.Set;
 
 public class CreateOrderDto {
     Date date;
-    List<Product> productList;
     OrderStatus status;
     Customer customer;
     Address deliveryAddress;
@@ -22,9 +21,6 @@ public class CreateOrderDto {
     //Getters
     public Date getDate() {
         return date;
-    }
-    public List<Product> getProductList() {
-        return productList;
     }
     public OrderStatus getStatus() {
         return status;
@@ -43,9 +39,6 @@ public class CreateOrderDto {
     //Setters
     public void setDate(Date date) {
         this.date = date;
-    }
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
     }
     public void setStatus(OrderStatus status) {
         this.status = status;

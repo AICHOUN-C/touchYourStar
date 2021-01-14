@@ -7,7 +7,7 @@ public class CustomerDto {
 	private String firstname;
 	private String lastname;
 	private String email;
-	private String phone;
+	private int phoneNumber;
 	private Date birthdate;
 	
 	
@@ -29,11 +29,11 @@ public class CustomerDto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhone() {
-		return phone;
+	public int getPhoneNumber() {
+		return phoneNumber;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	public Date getBirthdate() {
 		return birthdate;

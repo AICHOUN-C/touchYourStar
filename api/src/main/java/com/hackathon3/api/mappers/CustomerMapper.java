@@ -13,8 +13,8 @@ public class CustomerMapper {
 		customer.setFirstname(dto.getFirstname());
 		customer.setLastname(dto.getLastname());
 		customer.setEmail(dto.getEmail());
-		customer.setPhone(dto.getPhone());;
-		customer.setBirthdate(dto.getBirthdate());;
+		customer.setPhoneNumber(dto.getPhoneNumber());
+		customer.setBirthdate(dto.getBirthdate());
 		return customer;
 	}
 	
@@ -22,8 +22,8 @@ public class CustomerMapper {
 		customer.setFirstname(dto.getFirstname());
 		customer.setLastname(dto.getLastname());
 		customer.setEmail(dto.getEmail());
-		customer.setPhone(dto.getPhone());;
-		customer.setBirthdate(dto.getBirthdate());;
+		customer.setPhoneNumber(dto.getPhoneNumber());;
+		customer.setBirthdate(dto.getBirthdate());
 		return customer;
 	}
 }

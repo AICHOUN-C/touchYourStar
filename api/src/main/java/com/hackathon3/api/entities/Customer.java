@@ -66,14 +66,15 @@ public class Customer {
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-
-	@Column(name = "birthdate", nullable = true)
-	public Date getBirthDate() {
+	public Date getBirthdate() {
 		return birthdate;
 	}
-	public void setBirthDate() {
+	public void setBirthdate(Date birthdate) {
 		this.birthdate = birthdate;
 	}
+
+	@Column(name = "birthdate", nullable = true)
+
 
     @OneToOne(mappedBy = "user")
     @JoinColumn(name = "user_id")
