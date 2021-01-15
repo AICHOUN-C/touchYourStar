@@ -1,7 +1,7 @@
 package com.hackathon3.api.controllers;
 
-import com.hackathon3.api.dto.ProductDto;
-import com.hackathon3.api.services.ProductService;
+import com.hackathon3.api.dto.OrderListDto;
+import com.hackathon3.api.services.OrderListService;
 
 import java.util.List;
 
@@ -16,39 +16,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hackathon3.api.entities.Product;
-
-
+import com.hackathon3.api.entities.OrderList;
 
 @CrossOrigin(origins ="*", maxAge=3600)
 @RestController
 @RequestMapping("/orderlist")
 public class OrderListController {
     @Autowired
-	ProductService productService;
+	OrderListService orderlistService;
 	
 	@GetMapping
-	public List<Product> findAllProducts() {
-		return productService.findAllProducts();
+	public List<OrderList> findAllOrderlists() {
+		return orderlistService.findAllOrderLists();
 	}
 	
 	@GetMapping("/{id}")
-	public Product findProductById(@PathVariable Long id) {
-		return productService.findProductById(id);
+	public OrderList findorderlistById(@PathVariable Long id) {
+		return orderlistService.findOrderListById(id);
 	}
 
 	@PostMapping("/create")
-	public Product createProduct(@RequestBody ProductDto dto) {
-		return productService.createProduct(dto);
+	public OrderList createOrderlist(@RequestBody OrderListDto dto) {
+		return orderlistService.createOrderList(dto);
 	}
 	
 	@PutMapping("/{id}")
-	public Product updateProduct(@PathVariable Long id, @RequestBody ProductDto dto) {
-		return productService.update(id, dto);
+	public OrderList updateOrderlist(@PathVariable Long id, @RequestBody OrderListDto dto) {
+		return orderlistService.update(id, dto);
 	}
 	
 	@DeleteMapping("/{id}")
-	public void deleteProduct(@PathVariable Long id) {
-		productService.delete(id);
+	public void deleteorderlist(@PathVariable Long id) {
+		orderlistService.delete(id);
 	}
 }

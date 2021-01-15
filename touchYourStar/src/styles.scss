@@ -13,7 +13,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $touchYourStar-primary: mat-palette($mat-orange, 500 );
-$touchYourStar-accent: mat-palette($mat-pink, A500);
+$touchYourStar-accent: mat-palette($mat-pink);
 
 // The warn palette is optional (defaults to red).
 $touchYourStar-warn: mat-palette($mat-red);

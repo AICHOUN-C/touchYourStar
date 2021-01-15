@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiOrderService } from '../../services/api-order.service';
 
 @Component({
@@ -6,21 +7,33 @@ import { ApiOrderService } from '../../services/api-order.service';
   templateUrl: './order-shop.component.html',
   styleUrls: ['./order-shop.component.scss']
 })
-export class OrderShopComponent implements OnInit, OnChanges{
+export class OrderShopComponent implements OnInit, OnChanges {
 
-  orders=[]
+  orders: any = [];
   totalPrice = 0;
 
-  constructor(private apiOrder: ApiOrderService) { }
+  constructor(private apiOrder: ApiOrderService, private router: Router) { }
 
   ngOnInit(): void {
-    this.orders = this.apiOrder.order
+    this.apiOrder.getOrderList().subscribe((data) => this.orders = data)
   }
 
   ngOnChanges(): void {
-    this.orders.forEach(item => {
-      this.totalPrice += item.price;
-    });
+
+  }
+
+  delete(element: number) {
+    this.apiOrder.deleteBlocky(element)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reload()
+        },
+        error => console.log(error));
+
+  }
+  reload() {
+    document.location.reload();
   }
 
 }
