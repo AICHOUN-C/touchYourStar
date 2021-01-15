@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Products } from '../../models/Products';
 import { ApiOrderService } from '../../services/api-order.service';
 
 @Component({
@@ -11,23 +12,38 @@ export class ItemsProductsComponent implements OnInit {
   @Input()
   idProduct = 0
   @Input()
-  brandProduct= "0"
+  brandProduct = "0"
   @Input()
-  descriptionProduct= "0"
+  descriptionProduct = "0"
   @Input()
-  imgProduct= "0"
+  imgProduct = "0"
   @Input()
-  priceProduct=0
+  priceProduct = 0
 
+  productShop!: Products;
 
-  constructor(private apiOrder:ApiOrderService) { }
+  constructor(private apiOrder: ApiOrderService) { }
 
   ngOnInit(): void {
+    this.productShop = new Products(this.idProduct,
+      "",
+      this.descriptionProduct,
+      this.imgProduct, this.brandProduct,
+      this.priceProduct,
+      1,
+      "");
   }
 
-  addToOrder(){
-    const product = {id:this.idProduct, brand:this.brandProduct, price:this.priceProduct}
-    this.apiOrder.order.push(product)
+  addToOrder() {
+    this.apiOrder.postOrderList(this.productShop).subscribe(data => {
+      console.log(data);
+      this.productShop = new Products(this.idProduct,
+        "",
+        this.descriptionProduct,
+        this.imgProduct, this.brandProduct,
+        this.priceProduct,
+        1,
+        "");
+    }, error => console.log(error));
   }
-
 }

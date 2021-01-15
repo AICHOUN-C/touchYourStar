@@ -6,21 +6,19 @@ import { ApiOrderService } from '../../services/api-order.service';
   templateUrl: './order-shop.component.html',
   styleUrls: ['./order-shop.component.scss']
 })
-export class OrderShopComponent implements OnInit, OnChanges{
+export class OrderShopComponent implements OnInit, OnChanges {
 
-  orders=[]
+  orders: any=[];
   totalPrice = 0;
 
   constructor(private apiOrder: ApiOrderService) { }
 
   ngOnInit(): void {
-    this.orders = this.apiOrder.order
+    this.apiOrder.getOrderList().subscribe((data) => this.orders = data)
   }
 
   ngOnChanges(): void {
-    this.orders.forEach(item => {
-      this.totalPrice += item.price;
-    });
+
   }
 
 }
