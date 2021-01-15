@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "touchYourStar"
+  "defaultProject": "touchYourStar",
+  "cli": {
+    "analytics": "43b6cc81-2480-4a96-90e9-33c11aea63b8"
+  }
 }

@@ -9,11 +9,11 @@ const routes: Routes = [
       { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
       { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
       { path: '', redirectTo: 'shop', pathMatch: 'full' },
-      {path: '**', component:PageNotFoundComponent},
+      {path: '**', component:PageNotFoundComponent, data:{ title: "ce n'est pas par ici", description: 'erreur 404' }},
     ]
   },
   { path: '', redirectTo: 'shop', pathMatch: 'full' },
-  {path: '**', component:PageNotFoundComponent},
+  {path: '**', component:PageNotFoundComponent, data:{ title: "ce n'est pas par ici", description: 'erreur 404' }},
 ];
 
 @NgModule({
