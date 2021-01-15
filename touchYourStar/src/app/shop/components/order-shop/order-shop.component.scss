@@ -1,0 +1,25 @@
+#main{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#card{
+    width: 50vh;
+    text-align: center;
+}
+#divider{
+    margin-bottom: 1em;
+}
+span{
+    flex: auto;
+}
+#total{
+    display: flex;
+    flex-direction: row;
+}
+#item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

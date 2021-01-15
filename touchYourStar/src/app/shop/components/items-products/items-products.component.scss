@@ -1,11 +1,28 @@
 #card {
-    height: 150px;
-    width: 250px;
-    margin: 1em;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+  height: 70%;
+  width: 19em;
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+#content {
+height: 120px;
+display: flex;
+flex-direction: column;
 }
 #imgProduct{
-    margin-right: 1em;
+  margin-right: 1em;
+  width: 40px;
+  height: 40px;
+}
+.button{
+  margin-top: 7em;
+  margin-right: 1em;
+}
+#click{
+  cursor: pointer;
+  outline: none;
+  border: 0;
 }

@@ -6,10 +6,10 @@ import { ShopComponent } from './shop.component';
 
 
 const routes: Routes = [
-  { path: 'list', component: ShopComponent },
-  { path: 'list/:detailId', component: DetailProductsComponent },
-  { path: 'order', component: OrderShopComponent },
-  { path: '', redirectTo: 'list', pathMatch: 'full' }
+  { path: 'list', component: ShopComponent, data:{ title: "Touched By Star", description: "page d'acceuil" } },
+  { path: 'list/:detailId', component: DetailProductsComponent, data:{ title: "Votre objet Touched By Star", description: 'détail sur votre objet sélectionné' } },
+  { path: 'order', component: OrderShopComponent, data:{ title: "Votre commande de Star", description: 'détail de votre commande sur Touched By Star' }},
+  { path: '', redirectTo: 'list', pathMatch: 'full' },
 ];
 
 @NgModule({

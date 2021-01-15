@@ -1,9 +1,17 @@
 <mat-card id="card" class="mat-elevation-z8">
-        <img id="imgProduct" mat-card-avatar src={{imgProduct}}>
-        <mat-card-content>
-            <mat-card-title>{{nameProduct}}</mat-card-title>
-            {{descriptionProduct}}
-            <mat-card-subtitle>Prix : </mat-card-subtitle>
+    <div id="click" [routerLink]="['../list', idProduct]">
+    <img id="imgProduct" mat-card-avatar src={{imgProduct}} alt="photo de {{brandProduct}} ">
+    <mat-card-content id="content">
+        <mat-card-title>{{brandProduct}}</mat-card-title>
+        {{descriptionProduct}}
+        <mat-card-subtitle>Prix : </mat-card-subtitle>
         <mat-card-title>{{priceProduct}} €</mat-card-title>
-        </mat-card-content>
+    </mat-card-content>
+    </div>
+
+    <mat-card-footer>
+        <button class="button" mat-fab color="accent" aria-label="Add to Order" (click)="addToOrder()">
+            <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+    </mat-card-footer>
 </mat-card>
