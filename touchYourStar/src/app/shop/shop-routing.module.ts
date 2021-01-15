@@ -6,9 +6,9 @@ import { ShopComponent } from './shop.component';
 
 
 const routes: Routes = [
-  { path: 'list', component: ShopComponent },
-  { path: 'list/:detailId', component: DetailProductsComponent },
-  { path: 'order', component: OrderShopComponent },
+  { path: 'list', component: ShopComponent, data:{ title: "Touched By Star", description: "page d'acceuil" } },
+  { path: 'list/:detailId', component: DetailProductsComponent, data:{ title: "trotoir", description: 'erreur 404' } },
+  { path: 'order', component: OrderShopComponent, data:{ title: "ce n'est pas par ici", description: 'erreur 404' }},
   { path: '', redirectTo: 'list', pathMatch: 'full' },
 ];
 
