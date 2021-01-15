@@ -6,7 +6,12 @@
                 <mat-list-item role="listitem">
                     <h1>{{item.brand}}</h1>
                     <span></span>
-                    <h2>{{item.price}} €</h2>
+                    <div>
+                        <h2>{{item.price}} €</h2>
+                    </div>
+                    <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="delete(item.id)">
+                        <mat-icon>delete_outline</mat-icon>
+                    </button>
                 </mat-list-item>
             </div>
         </mat-list>
