@@ -23,4 +23,8 @@ export class ApiOrderService {
     return this.http.post(this.apiUrl+"/create", product);
   }
 
+  deleteBlocky(id:number){
+    return this.http.delete(`${this.apiUrl}/${id}`, { responseType: 'text' });
+  }
+
 }
