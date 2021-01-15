@@ -9,10 +9,10 @@ import { ApiOrderService } from '../../services/api-order.service';
 })
 export class OrderShopComponent implements OnInit, OnChanges {
 
-  orders: Object = [];
+  orders: any = [];
   totalPrice = 0;
 
-  constructor(private apiOrder: ApiOrderService, private router:Router) { }
+  constructor(private apiOrder: ApiOrderService, private router: Router) { }
 
   ngOnInit(): void {
     this.apiOrder.getOrderList().subscribe((data) => this.orders = data)
@@ -27,9 +27,13 @@ export class OrderShopComponent implements OnInit, OnChanges {
       .subscribe(
         data => {
           console.log(data);
+          this.reload()
         },
         error => console.log(error));
-    this.router.navigate(['shop/order']);
+
+  }
+  reload() {
+    document.location.reload();
   }
 
 }
