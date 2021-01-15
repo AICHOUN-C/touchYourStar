@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiOrderService } from '../../services/api-order.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class ItemsProductsComponent implements OnInit {
   priceProduct=0
 
 
-  constructor(private apiOrder:ApiOrderService) { }
+  constructor(private apiOrder:ApiOrderService, public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,5 +30,4 @@ export class ItemsProductsComponent implements OnInit {
     const product = {id:this.idProduct, brand:this.brandProduct, price:this.priceProduct}
     this.apiOrder.order.push(product)
   }
-
 }
