@@ -32,10 +32,10 @@ updateTitle(title?: string) {
                 }),
                 filter((route) => route.outlet === 'primary'),
                 mergeMap((route) => route.data)).subscribe((event) => {
-                    this.titleService.setTitle(event['title'] + ' | Site name');
+                    this.titleService.setTitle(event['title']);
                 });
     } else {
-        this.titleService.setTitle(title + ' | Site name');
+        this.titleService.setTitle(title);
     }
 }
 }
